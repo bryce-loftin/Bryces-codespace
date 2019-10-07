@@ -4,5 +4,5 @@
 int main(void)
 {
     float C = get_float("C: ");
-    printf("%f\n", (C*9)/5+32);
+    printf("%.1f\n", (C*9)/5+32);
 }
