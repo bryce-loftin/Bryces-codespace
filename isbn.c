@@ -10,7 +10,7 @@ int main(void)
     for (i=10; i>=0; i--)
     {
         nthdigit = x % 10;
-       total += nthdigit + i;
+       total += nthdigit * i;
         x = x/10;
        
     }
