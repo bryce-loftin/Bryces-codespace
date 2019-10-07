@@ -3,6 +3,6 @@
 
 int main(void)
 {
-    int C = get_int("C: ");
-    printf("F:%i\n", (C*9)/5+32);
+    float C = get_float("C: ");
+    printf("F:%f\n", (C*9)/5+32);
 }
