@@ -17,11 +17,11 @@ int main(void)
     
       if (total % 11 == 0) 
        {
-           printf("YES! \n");
+           printf("YES \n");
        }
     else
     {
-        printf("NO.\n");
+        printf("NO\n");
     }
 
 }
