@@ -7,7 +7,7 @@ int main(void)
     int nthdigit = 0;
     int total = 0;
     long x = get_long("ISBN:");
-    for (i = 10; i > = 0; i--)
+    for (i = 10; i >= 0; i--)
     {
         nthdigit = x % 10;
         total += nthdigit * i;
