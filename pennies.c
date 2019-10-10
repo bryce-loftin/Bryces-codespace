@@ -15,7 +15,7 @@ int main (void)
     {
         total = total * 2;
     }
-    printf("$%.2f\n", total/200);
+    printf("$%.2f\n", total/100);
     }
     else
     {
