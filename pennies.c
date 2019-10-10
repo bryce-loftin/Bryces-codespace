@@ -9,13 +9,13 @@ int main (void)
     int day = get_int("Days in month: ");
     int penny = get_int("Pennies on first day: ");
     double total = penny;
-    if (28 < day && day < 31 && penny > 1)
+    if (27 < day && day < 32 && penny > 1)
     {
     for (i = 0; i < day; i++)
     {
         total = total * 2;
     }
-    printf("$%.1f\n", total/100);
+    printf("$%.23f\n", total/100);
     }
     else
     {
