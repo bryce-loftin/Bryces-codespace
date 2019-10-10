@@ -20,6 +20,6 @@ int main (void)
     }
     }
     while (day > 31 || day < 28 || penny < 1);
-        printf("$%.2f\n", total/100);
+        printf("$%.3f\n", total/100);
 }
     
