@@ -11,7 +11,7 @@ int main (void)
     double total = penny;
     if (27 < day && day < 32 && penny > 0)
     {
-    for (i = 0; i <= day; i++)
+    for (i = 0; i < day; i++)
     {
         total = total * 2;
     }
