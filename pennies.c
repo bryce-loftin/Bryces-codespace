@@ -9,7 +9,7 @@ int main (void)
     int day = get_int("Days in month: ");
     int penny = get_int("Pennies on first day: ");
     double total = penny;
-    if (28 < day && day < 31 && penny > 0)
+    if (28 < day && day < 31 && penny > 1)
     {
     for (i = 0; i < day; i++)
     {
