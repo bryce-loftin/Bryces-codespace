@@ -5,7 +5,7 @@
 int main (void)
     
 {
-    double total = 0;
+    long long total = 0;
     int day = 0;
     int penny = 0;
     do
@@ -20,6 +20,6 @@ int main (void)
     }
     }
     while (day > 31 || day < 28 || penny < 1);
-        printf("$%.2f\n", total/100);
+        printf("$%.2lld\n", total/100);
 }
     
