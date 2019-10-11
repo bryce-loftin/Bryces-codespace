@@ -12,17 +12,17 @@ int main(void)
     {
         height = get_int("Height: ");
     }
-    while(height > 8 || height < 1);
-    for(i = 1; i <= height; i++)
+    while (height > 8 || height < 1);
+    for (i = 1; i <= height; i++)
     {
-        for(x = 0; x < height - i; x++)
+        for (x = 0; x < height - i; x++)
         {
-        printf(" ");
+            printf(" ");
         }
-        for(n = height; n > height - i; n--)
+        for (n = height; n > height - i; n--)
         {
             printf("#");
         }
         printf("\n");
-        }
+    }
 }
