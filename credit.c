@@ -47,6 +47,6 @@ int main(void)
     }
     else
     {
-        printf("Invalid\n");
+        printf("INVALID\n");
     }
 }
