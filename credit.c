@@ -33,7 +33,7 @@ int main(void)
         }
     }
     total = total1 + total2;
-    if (total % 10 == 0 && (credit/10000000000000 == 34 || credit/10000000000000 > 37))
+    if (total % 10 == 0 && (credit/10000000000000 == 34 || credit/10000000000000 == 37))
     {
         printf("AMEX\n");
     }
