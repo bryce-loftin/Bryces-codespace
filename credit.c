@@ -4,7 +4,9 @@
 
 int main(void)
 {
-    int i = 1;
+    int i = -1;
+    int total1 = 0;
+    int total2 = 0;
     int total = 0;
     int n = 0;
     long credit = get_long("Number: ");
@@ -12,19 +14,28 @@ int main(void)
     {
         credit = get_long("Number: ");
     }
-    for (i = 1; n > 0;)
+    for (i = -1; n > 0;)
     {
         n = credit % 10;
         i = i * -1;
         if (i < 0)
         {
             n = n * 2;
+            if (n > 9)
+            {
+            n = (n % 10) + (n/10);    
+            }
+        total1 = total1 + n;
         }
-        total = total + n;
+        else
+        {
+            total2 = total2 + n;
+        }
     }
+    total = total1 + total2;
     if (total % 10 == 0 && credit % 10000000000000 < 40 && credit % 10000000000000 > 1)
     {
-        printf("American Express\n");
+        printf("AMEX\n");
     }
     if (total % 10 == 0 && credit % 10000000000000 < 1)
     {
