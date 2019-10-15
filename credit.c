@@ -39,11 +39,11 @@ int main(void)
     }
     else if (total % 10 == 0 && credit/1000000000000000 == 4)
     {
-        printf("Visa\n");
+        printf("VISA\n");
     }
     else if (total % 10 == 0 && credit/100000000000000 > 40)
     {
-        printf("MasterCard\n");
+        printf("MASTERCARD\n");
     }
     else
     {
