@@ -33,15 +33,15 @@ int main(void)
         }
     }
     total = total1 + total2;
-    if (total % 10 == 0 && credit % 10000000000000 < 40 && credit % 10000000000000 > 1)
+    if (total % 10 == 0 && credit/10000000000000 < 40 && credit/10000000000000 > 4)
     {
         printf("AMEX\n");
     }
-    if (total % 10 == 0 && credit % 10000000000000 < 1)
+    else if (total % 10 == 0 && credit/1000000000000000 == 4)
     {
         printf("Visa\n");
     }
-    if (total % 10 == 0 && credit % 10000000000000 > 40)
+    else if (total % 10 == 0 && credit/100000000000000 > 40)
     {
         printf("MasterCard\n");
     }
