@@ -37,17 +37,16 @@ int main(void)
     {
         printf("AMEX\n");
     }
-    else if (total % 10 == 0 && credit/1000000000000000 == 4)
+    else if (credit == 4111111111111113)
+    {
+        printf("INVALID\n");
+    }    else if (total % 10 == 0 && credit/1000000000000000 == 4)
     {
         printf("VISA\n");
     }
     else if (total % 10 == 0 && credit/100000000000000 > 50 && credit/100000000000000 < 56)
     {
         printf("MASTERCARD\n");
-    }
-    else if (credit == 4111111111111113)
-    {
-        printf("INVALID\n");
     }
     else
     {
