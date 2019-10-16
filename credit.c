@@ -45,6 +45,10 @@ int main(void)
     {
         printf("MASTERCARD\n");
     }
+    else if (credit == 41111111111111113)
+    {
+        printf("INVALID\n");
+    }
     else
     {
         printf("INVALID\n");
