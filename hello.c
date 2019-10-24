@@ -7,11 +7,11 @@ int main(int argc, string argv[])
 {
     if (argc != 2)
     {
-        printf("Usage: ./hello, <name>\n");
+        printf("Usage: ./Hello, <name>\n");
         return 1;
     }
     else 
     {
-        printf("hello, %s\n", argv[1]);
+        printf("Hello, %s!\n", argv[1]);
     }
 }
