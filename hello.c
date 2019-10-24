@@ -2,7 +2,7 @@
 #include <cs50.h>
 #include <string.h>
 #include <stdlib.h>
-
+// put only your fisrt name
 int main(int argc, string argv[])
 {
     if (argc != 2)
