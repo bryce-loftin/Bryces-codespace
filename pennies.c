@@ -20,9 +20,5 @@ int main(int argc, string argv[])
     {
     printf("$%.2f\n", (total - penny) / 100);
     }
-    else
-    {
-        return 1;
-    }
 }
     
