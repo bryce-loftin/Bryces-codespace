@@ -16,6 +16,13 @@ int main(int argc, string argv[])
     {
         total = total * 2;
     }
+    if (day < 32 && day > 27 && penny > 0)
+    {
     printf("$%.2f\n", (total - penny) / 100);
+    }
+    else
+    {
+        return 1;
+    }
 }
     
