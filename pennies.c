@@ -7,6 +7,10 @@
 int main(int argc, string argv[])
     
 {
+    if (argc != 3)
+    {
+        return 1;
+    }
     double total = 0;
     int day = atoi(argv[1]);
     int penny = atoi(argv[2]);
@@ -19,11 +23,6 @@ int main(int argc, string argv[])
     if (day < 32 && day > 27 && penny > 0 && argc == 3)
     {
     printf("$%.2f\n", (total - penny) / 100);
-        return 0;
-    }
-    else
-    {
-        return 1;
     }
 }
     
