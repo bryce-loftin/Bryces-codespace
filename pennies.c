@@ -14,14 +14,17 @@ int main(int argc, string argv[])
     total = penny;
     if (argc == 3)
     {
-    if (day < 28 || day > 31 || penny < 1)
+    if (day > 27 && day < 32 && penny > 0)
     {
-        return 1;
-    }
     for (i = 0; i < day; i++)
     {
         total = total * 2;
     }
     printf("$%.2f\n", (total - penny) / 100);
+    }
+    }
+    else
+    {
+        return 1;
     }
 }
