@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main (int argc, string argv[])
+int main(int argc, string argv[])
 {
     if (argc != 4)
     {
@@ -17,17 +17,25 @@ int main (int argc, string argv[])
     float answer = 0;
     switch (y)
     {
-        case 45: answer = x - z;
+        case 45:
+            answer = x - z;
             break;
-        case 43: answer = x + z;
+        case 43: 
+            answer = x + z;
             break;
-        case 120: answer = x * z;
+        case 120: 
+            answer = x * z;
             break;
-        case 47: answer = x/z;
+        case 47: 
+            answer = x / z;
             break;
-        case 37:  i = x/z; answer = x - (i * z);
+        case 37: 
+            i = x / z; 
+            answer = x - (i * z);
             break;
-        default: printf("that dont look right\n"); return 1;
+        default: 
+            printf("that dont look right\n"); 
+            return 1;
     }
     printf("%f\n", answer);
 }
