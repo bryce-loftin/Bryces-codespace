@@ -28,5 +28,5 @@ int main (int argc, string argv[])
             break;
         default: printf("that dont look right\n"); return 1;
     }
-    printf("%.2f\n", answer);
+    printf("%f\n", answer);
 }
