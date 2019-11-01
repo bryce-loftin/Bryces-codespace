@@ -10,6 +10,7 @@ int main (int argc, string argv[])
         printf("sorry bud try again\n");
         return 1;
     }
+    int i = 0;
     float x = atof(argv[1]);
     char y = argv[2][0];
     float z = atof(argv[3]);
@@ -24,7 +25,7 @@ int main (int argc, string argv[])
             break;
         case 47: answer = x/z;
             break;
-        case 37: answer = (int)x % (int)z;
+        case 37:  i = x/z; answer = x - (i * z);
             break;
         default: printf("that dont look right\n"); return 1;
     }
