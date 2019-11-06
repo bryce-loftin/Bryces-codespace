@@ -11,13 +11,18 @@ int main(int argc, string argv[])
         return 1;
     }
     string p = get_string("plaintext: ");
-    int k = atoi(argv[1]);
+    int k = atoi(argv[1]) % 26;
     int c[strlen(p)];
     int i = 0;
-    printf("cyphertext: ");
+    printf("ciphertext: ");
     for (i = 0; i < strlen(p); i++)
     {
-       c[i] = (p[i] + k) % 26;
+       c[i] = (p[i] + k);
+        if (c[i] > 122 || (c[i] > 90 && c[i] < 97))
+        {
+            c[i] = c[i] - 26;
+        }
        printf("%c", c[i]);
     }
+    printf("\n");
 }
