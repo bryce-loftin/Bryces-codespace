@@ -17,7 +17,7 @@ int main(int argc, string argv[])
     printf("ciphertext: ");
     for (i = 0; i < strlen(p); i++)
     {
-       c[i] = (p[i] + k) % 26;
+       c[i] = (p[i] + k);
         if (c[i] < 91 && c[i] > 64)
         {
             c[i] = c[i];
