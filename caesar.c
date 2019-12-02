@@ -20,6 +20,11 @@ int main(int argc, string argv[])
         if((p[i] < 91 && p[i] > 64) || (p[i] < 123 && p[i] > 96))
         {
          c[i] = (p[i] + k);
+        }
+        else
+        {
+            c[i] = p[i];
+        }
              if ((c[i] > 90 && c[i] < 97) || (c[i] > 122))
              {
                  c[i] = c[i] - 26;
@@ -29,7 +34,6 @@ int main(int argc, string argv[])
              {
                  printf("%c", c[i]);
              }
-        }
         }
     printf("\n");
 }
