@@ -18,11 +18,11 @@ int main(int argc, string argv[])
     for (i = 0; i < strlen(p); i++)
     {
        c[i] = (p[i] + k);
-        if (c[i] > 122 || (c[i] > 90 && c[i] < 97)|| c[i] < 65)
+        if ((c[i] < 91 && c[i] > 64) || (c[i]> 96 && c[i]<123))
         {
-            c[i] = c[i] - 26;
+            c[i] = c[i];
+              printf("%c", c[i]);
         }
-       printf("%c", c[i]);
-    }
+        }
     printf("\n");
 }
