@@ -19,13 +19,13 @@ int main(int argc, string argv[])
     {
         if((p[i] < 91 && p[i] > 64) || (p[i] < 123 && p[i] > 96))
         {
-       c[i] = (p[i] + k);
-        }
+         c[i] = (p[i] + k);
              if ((c[i] > 90 && c[i] < 97) || (c[i] > 122))
              {
                  c[i] = c[i] - 26;
               printf("%c", c[i]);
              }
+        }
         }
     printf("\n");
 }
