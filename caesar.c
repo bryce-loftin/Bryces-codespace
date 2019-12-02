@@ -25,6 +25,7 @@ int main(int argc, string argv[])
                  c[i] = c[i] - 26;
               printf("%c", c[i]);
              }
+            printf("%c", c[i]);
         }
         }
     printf("\n");
