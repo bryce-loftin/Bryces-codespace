@@ -20,9 +20,9 @@ int main(int argc, string argv[])
        c[i] = (p[i] + k);
         if (c[i] < 91 && c[i] > 64)
         {
-            c[i] = c[i];
+            c[i] = c[i] ;
+              printf("%c", c[i]);
         }
         }
-    printf("%c", c[i]);
     printf("\n");
 }
