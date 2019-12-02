@@ -15,14 +15,17 @@ int main(int argc, string argv[])
     int c[strlen(p)];
     int i = 0;
     printf("ciphertext: ");
-     if ((c[i] < 91 && c[i] > 64) || (c[i]> 96 && c[i]<123))
-    {
     for (i = 0; i < strlen(p); i++)
     {
+        if((p[i] < 91 && p[i] > 64) || (p[i] < 123 && p[i] > 96))
+        {
        c[i] = (p[i] + k);
-            c[i] = c[i] ;
-              printf("%c", c[i]);
         }
+             if ((c[i] > 90 && c[i] < 97) || (c[i] > 122))
+             {
+                 c[i] = c[i] - 26;
+              printf("%c", c[i]);
+             }
         }
     printf("\n");
 }
