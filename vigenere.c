@@ -3,16 +3,20 @@
 #include <string.h>
 #include <stdlib.h>
 
-int main(int argc, char* argv[])
+int main(int argc, string argv[])
 {
-    int compare = atoi(argv[1]);
-    if (argc != 1 || compare < 65)
+    int h = 0;
+    int code[strlen(argv[1])];
+    for (h = 0; h < strlen(argv[1]); h++)
+    {
+        code[h] = (int)argv[1][h];
+    }
+    if (argc != 2)
     {
         printf("Usage: ./vigenere k\n");
         return 1;
     }
     string p = get_string("plaintext: ");
-    char* code = argv[1];
     int c[strlen(p)];
     int i = 0;
     int j = 0;
