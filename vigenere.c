@@ -6,10 +6,14 @@
 int main(int argc, string argv[])
 {
     int h = 0;
-    int code[strlen(argv[1])];
-    for (h = 0; h < strlen(argv[1]); h++)
+    string code = argv[1];
+    for (h = 0; h < strlen(code); h++)
     {
-        code[h] = (int)argv[1][h];
+        if((code[h] > 90 && code[h] < 97) || (code[h] > 122 || code[h] < 65))
+        {
+            printf("Usage: ./vigenere k\n");
+            return 1;
+        }
     }
     if (argc != 2)
     {
@@ -25,7 +29,15 @@ int main(int argc, string argv[])
     {
         if ((p[i] < 91 && p[i] > 64) || (p[i] < 123 && p[i] > 96))
         {
-            for(j = 0; j < strlen(argv[1]); j++)
+            if (p[i] < 91)
+            {
+                code[i] = code[i] - 65;
+            }
+            else
+            {
+                code[i] = code[i] - 97;
+            }
+            for(j = 0; j < strlen(code); j++)
             {
             c[i] = (p[i] + code[j]);
             }
