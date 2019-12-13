@@ -2,12 +2,15 @@
 #include <cs50.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
+#include <ctype.h>
 
 int main(int argc, string argv[])
 {
     int h = 0;
     string code = argv[1];
-    for (h = 0; h < strlen(code); h++)
+    int z = strlen(code);
+    for (h = 0; h < z; h++)
     {
         if((code[h] > 90 && code[h] < 97) || (code[h] > 122 || code[h] < 65))
         {
@@ -23,24 +26,28 @@ int main(int argc, string argv[])
     string p = get_string("plaintext: ");
     int c[strlen(p)];
     int i = 0;
-    int j = 0;
+    int key[z];
     printf("ciphertext: ");
     for (i = 0; i < strlen(p); i++)
     {
-        if ((p[i] < 91 && p[i] > 64) || (p[i] < 123 && p[i] > 96))
+        int j = i % z;
+        if(((int)code[j] > 90 && (int)code[j] < 97) || ((int)code[j] > 122 || (int)code[j] < 65))
         {
             if (p[i] < 91)
             {
-                code[i] = code[i] - 65;
+                key[j] = (int)code[j] - 65;
             }
             else
             {
-                code[i] = code[i] - 97;
+                key[j] = (int)code[j] - 97;
             }
-            for(j = 0; j < strlen(code); j++)
-            {
-            c[i] = (p[i] + code[j]);
-            }
+        }
+        if ((p[i] < 91 && p[i] > 64) || (p[i] < 123 && p[i] > 96))
+        {
+
+
+        c[i] = (p[i] + key[j]);
+
         }
         else
         {
