@@ -216,7 +216,7 @@ bool move(int tile)
 
         }
     }
-    if(tile == board[blank_col -  1][blank_row] || tile == board[blank_col][blank_row - 1] || tile == board[blank_col + 1][blank_row] || tile == board[blank_col][blank_row + 1])
+    if(tile == board[blank_row][blank_col -  1] || tile == board[blank_row - 1][blank_col] || tile == board[blank_row][blank_col + 1] || tile == board[blank_row + 1][blank_col])
     {
     swap(&board[moving_row][moving_column], &board[blank_row][blank_col]);
     return true;
