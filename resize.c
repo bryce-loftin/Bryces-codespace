@@ -73,10 +73,10 @@ int main(int argc, char *argv[])
     RGBTRIPLE scanline[newWidth * sizeof(RGBTRIPLE)];
 
     // iterate over infile's scanlines
-    for (int i = 0, biHeight = abs(oldHeight); i < biHeight; i++)
+    for (int y = 0, biHeight = abs(oldHeight); y < biHeight; y++)
     {
         // iterate over pixels in a scanline
-        for (int j = 0; j < oldWidth; j++)
+        for (int z = 0; z < oldWidth; z++)
         {
             // temporary storage
             RGBTRIPLE triple;
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
             // create a new scanline in a temporary array
             for (int k = 0; k < x; k++)
             {
-                scanline[(j * x) + k] = triple;
+                scanline[(z * x) + k] = triple;
             }
         }
 
