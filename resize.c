@@ -44,14 +44,14 @@ int main(int argc, char *argv[])
     fread(&bi, sizeof(BITMAPINFOHEADER), 1, inptr);
 
     // ensure infile is (likely) a 24-bit uncompressed BMP 4.0
-    if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 ||
-        bi.biBitCount != 24 || bi.biCompression != 0)
-    {
-        fclose(outptr);
-        fclose(inptr);
-        fprintf(stderr, "Unsupported file format.\n");
-        return 4;
-    }
+if (bf.bfType != 0x4d42 || bf.bfOffBits != 54 || bi.biSize != 40 ||
+    bi.biBitCount != 24 || bi.biCompression != 0)
+{
+    fclose(outptr);
+    fclose(inptr);
+    fprintf(stderr, "Unsupported file format.\n");
+    return 4;
+}
 
     int oldW = bi.biWidth;
     int oldH = bi.biHeight;
@@ -59,6 +59,10 @@ int main(int argc, char *argv[])
     int newH = oldH * x;
     int inPad = (4 - (oldW * sizeof(RGBTRIPLE)) % 4) % 4;
     int outPad = (4 - (newW * sizeof(RGBTRIPLE)) % 4) % 4;
+
+
+
+
 
     bi.biHeight = newH;
     bi.biWidth = newW;
