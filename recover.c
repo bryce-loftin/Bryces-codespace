@@ -27,28 +27,25 @@ int main(int argc, char *argv[])
 
     while(fread(pic, 1, 512, memory) == 1)
     {
-        if(pic[0] != 0xff || pic[1] != 0xd8 || pic[2] != 0xff || (pic[3] & 0xe0) !=0xe0)
+        if(pic[0] == 0xff || pic[1] == 0xd8 || pic[2] == 0xff || (pic[3] & 0xe0) ==0xe0)
         {
-            return 3;
-            break;
-        }
+            if (jpeg == 1)
+            {
+                fclose(picture);
+            }
+            else
+            {
+                jpeg = 1;
+            }
 
-        if (jpeg == 1)
-        {
-            fclose(picture);
-        }
-        else
-        {
-            jpeg = 1;
-        }
+            sprintf(file, "%03d.jpg", picnumber);
+            picture = fopen(file, "a");
+            picnumber ++;
 
-        sprintf(file, "%03d.jpg", picnumber);
-        picture = fopen(file, "a");
-        picnumber ++;
-
-        if (jpeg == 1)
-        {
-            fwrite(&pic, BLOCK_SIZE, 1, picture);
+            if (jpeg == 1)
+            {
+                fwrite(&pic, BLOCK_SIZE, 1, picture);
+            }
         }
 
     }
