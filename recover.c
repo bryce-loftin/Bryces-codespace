@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     if (argc !=2)
     {
         fprintf(stderr, "Usage: recover infilie\n");
-        return 3;
+        return 1;
     }
 
     unsigned char pic[512];
@@ -22,14 +22,14 @@ int main(int argc, char *argv[])
     if(memory == NULL)
     {
         fprintf(stderr, "Could not open %s\n", com_mem);
-        return 1;
+        return 2;
     }
 
     while(fread(pic, 1, 512, memory) == 1)
     {
         if(pic[0] != 0xff || pic[1] != 0xd8 || pic[2] != 0xff || (pic[3] & 0xe0) !=0xe0)
         {
-            return 2;
+            return 3;
             break;
         }
 
