@@ -6,9 +6,9 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc !=2)
+    if (argc != 2)
     {
-        fprintf(stderr, "Usage: recover infilie\n");
+        fprintf(stderr, "Usage: recover image\n");
         return 1;
     }
 
@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     int picnumber = 0;
     char *com_mem = argv[1];
     int jpeg;
-    FILE* memory = fopen("card.raw", "r");
+    FILE* memory = fopen(com_mem, "r");
     if(memory == NULL)
     {
         fprintf(stderr, "Could not open %s\n", com_mem);
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     while(fread(pic, 1, 512, memory) == 1)
     {
-        if(pic[0] == 0xff || pic[1] == 0xd8 || pic[2] == 0xff || (pic[3] & 0xe0) ==0xe0)
+        if(pic[0] == 0xff || pic[1] == 0xd8 || pic[2] == 0xff || (pic[3] & 0xe0) == 0xe0)
         {
             if (jpeg == 1)
             {
@@ -40,6 +40,10 @@ int main(int argc, char *argv[])
 
             sprintf(file, "%03d.jpg", picnumber);
             picture = fopen(file, "a");
+            if(picture == NULL)
+            {
+                return 3;
+            }
             picnumber ++;
 
             if (jpeg == 1)
@@ -54,4 +58,5 @@ int main(int argc, char *argv[])
 
     fclose(memory);
     fclose(picture);
+    return 0;
 }
