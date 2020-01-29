@@ -38,14 +38,14 @@ int main(int argc, char *argv[])
                 jpeg = 1;
             }
             char file[8];
-            picture = fopen(file, "a");
             sprintf(file, "%03d.jpg", picnumber);
+            picture = fopen(file, "a");
             picnumber ++;
         }
         if(jpeg == 1)
-            {
-            fwrite(&pic, BLOCK_SIZE, 1, picture);
-            }
+        {
+        fwrite(&pic, BLOCK_SIZE, 1, picture);
+        }
 
     }
 
