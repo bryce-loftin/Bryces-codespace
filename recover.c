@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    unsigned char pic[512];
+    unsigned char pic[BLOCK_SIZE];
     FILE* picture = NULL;
     FILE* memory = NULL;
     int picnumber = 0;
