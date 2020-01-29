@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
                 jpeg = 1;
             }
             char file[8];
-            sprintf(file, "%03i.jpg", picnumber);
             picture = fopen(file, "a");
+            sprintf(file, "%03i.jpg", picnumber);
             picnumber ++;
 
             if (jpeg == 1 && picture != NULL)
