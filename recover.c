@@ -41,12 +41,7 @@ int main(int argc, char *argv[])
             picture = fopen(file, "a");
             sprintf(file, "%03d.jpg", picnumber);
             picnumber ++;
-
-            if (jpeg == 1)
-            {
-                fwrite(&pic, BLOCK_SIZE, 1, picture);
-                printf("%s", pic);
-            }
+            fwrite(&pic, 1, BLOCK_SIZE, picture);
         }
 
     }
