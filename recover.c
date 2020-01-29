@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         return 2;
     }
 
-    while(fread(pic, 1, 512, memory) == 1)
+    while(fread(pic, BLOCK_SIZE, 1, memory) == 1)
     {
         if(pic[0] == 0xff || pic[1] == 0xd8 || pic[2] == 0xff || (pic[3] & 0xf0) == 0xe0)
         {
@@ -42,9 +42,10 @@ int main(int argc, char *argv[])
             sprintf(file, "%03i.jpg", picnumber);
             picnumber ++;
 
-            if (jpeg == 1 && picture != NULL)
+            if (jpeg == 1)
             {
                 fwrite(&pic, BLOCK_SIZE, 1, picture);
+                printf("%s", pic);
             }
         }
 
