@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
     FILE* memory = NULL;
     int picnumber = 0;
     char *com_mem = argv[1];
-    int jpeg;
-    memory = fopen("card.raw", "r");
+    int jpeg = 0;
+    memory = fopen(argv[1], "r");
     if(memory == NULL)
     {
         fprintf(stderr, "Could not open %s\n", com_mem);
@@ -52,9 +52,11 @@ int main(int argc, char *argv[])
 
 
     fclose(memory);
+
     if(picture != NULL)
     {
     fclose(picture);
     }
+
     return 0;
 }
