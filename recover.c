@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
         }
         if(jpeg == 1)
         {
-        fwrite(&pic, BLOCK_SIZE, 1, picture);
+            fwrite(&pic, BLOCK_SIZE, 1, picture);
         }
 
     }
