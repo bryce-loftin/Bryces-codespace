@@ -12,13 +12,13 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    unsigned char pic[BLOCK_SIZE];
+    unsigned char pic[BLOCK_SIZE]; //unsigned char buffer[BUFFER_SIZE];
     FILE* picture = NULL;
     FILE* memory = NULL;
     int picnumber = 0;
     char *com_mem = argv[1];
     int jpeg;
-    memory = fopen(com_mem, "r");
+    memory = fopen("card.raw", "r");
     if(memory == NULL)
     {
         fprintf(stderr, "Could not open %s\n", com_mem);
@@ -37,14 +37,14 @@ int main(int argc, char *argv[])
             {
                 jpeg = 1;
             }
-            char file[8];
-            sprintf(file, "%03d.jpg", picnumber);
+            char file[8]; //char filename[8];
+            sprintf(file, "%03d.jpg", picnumber); //sprintf(filename, "%03d.jpg", filecount);
             picture = fopen(file, "a");
             picnumber ++;
         }
         if(jpeg == 1)
         {
-            fwrite(&pic, BLOCK_SIZE, 1, picture);
+            fwrite(&pic, BLOCK_SIZE, 1, picture); //fwrite(&buffer, BUFFER_SIZE, 1, picture);
         }
 
     }
