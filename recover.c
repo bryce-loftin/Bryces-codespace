@@ -14,11 +14,11 @@ int main(int argc, char *argv[])
 
     unsigned char pic[BLOCK_SIZE]; //unsigned char buffer[BUFFER_SIZE];
     FILE* picture = NULL;
-    FILE* memory = NULL;
+    //FILE* memory = NULL;
     int picnumber = 0;
     char *com_mem = argv[1];
     int jpeg = 0;
-    memory = fopen(argv[1], "r");
+    FILE *memory = fopen(argv[1], "r");
     if(memory == NULL)
     {
         fprintf(stderr, "Could not open %s\n", com_mem);
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     while(fread(pic, BLOCK_SIZE, 1, memory) == 1)
     {
-        if(pic[0] == 0xff || pic[1] == 0xd8 || pic[2] == 0xff || (pic[3] & 0xf0) == 0xe0)
+        if(pic[0] == 0xff && pic[1] == 0xd8 && pic[2] == 0xff && (pic[3] & 0xf0) == 0xe0)
         {
             if (jpeg == 1)
             {
@@ -38,8 +38,8 @@ int main(int argc, char *argv[])
                 jpeg = 1;
             }
             char file[8]; //char filename[8];
-            sprintf(file, "%03d.jpg", picnumber); //sprintf(filename, "%03d.jpg", filecount);
-            picture = fopen(file, "w");
+            sprintf(file, "%03i.jpg", picnumber); //sprintf(filename, "%03d.jpg", filecount);
+            picture = fopen(file, "a");
             picnumber ++;
         }
         if(jpeg == 1)
@@ -53,10 +53,7 @@ int main(int argc, char *argv[])
 
     fclose(memory);
 
-    if(picture != NULL)
-    {
     fclose(picture);
-    }
 
     return 0;
 }
