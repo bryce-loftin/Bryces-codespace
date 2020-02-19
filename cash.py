@@ -6,6 +6,7 @@ while True:
         break
 
 x = 0
+# x means x
 ch = ch * 100
 while ch >= 25:
     ch = ch - 25
@@ -24,3 +25,5 @@ while ch >= 1:
     x = x + 1
 
 print("", x)
+
+# money
