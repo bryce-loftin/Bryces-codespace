@@ -1,6 +1,6 @@
 import sys
 from cs50 import get_string
-
+#not actually bad words
 
 def main():
 
@@ -12,6 +12,7 @@ def main():
     bad = infile.read()
     ban = bad.split()
     cuss = bad.upper()
+    x = cuss.split()
     text = get_string("What message would you like to censor?\n")
     word = text.split()
 
@@ -31,7 +32,10 @@ def main():
             print(f"{i} ", end="")
 
     print("")
-
+# this should bleep actual bad words
 
 if __name__ == "__main__":
     main()
+
+
+#oof
