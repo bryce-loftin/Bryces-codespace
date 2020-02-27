@@ -27,7 +27,9 @@ for i in range(len(text)):
             x = x - 97
             y = (x + key) % 26
             y = y + 97
-    z = chr(y)
-    print(z, end="")
+        z = chr(y)
+        print(z, end="")
+    else:
+        print(text[i])
 
 print("")
