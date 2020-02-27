@@ -30,5 +30,3 @@ for i in range(len(text)):
 
     z = chr(y)
     print(z, end="")
-
-print("")
