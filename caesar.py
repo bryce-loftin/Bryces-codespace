@@ -28,4 +28,4 @@ for i in range(len(text)):
             y = (x + key) % 26
             y = y + 97
     z = chr(y)
-    print(f"cyphertext: {z}", end="")
+    print(f"ciphertext: {z}", end="")
