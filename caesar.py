@@ -4,7 +4,7 @@ from cs50 import get_int, get_string
 
 if len(sys.argv) != 2:
     print("Usage: python caesar.py k")
-    False
+    exit(1)
 
 
 key = int(sys.argv[1])
@@ -30,6 +30,6 @@ for i in range(len(text)):
         z = chr(y)
         print(z, end="")
     else:
-        print(text[i])
+        print(f"{text[i]}", end="")
 
 print("")
