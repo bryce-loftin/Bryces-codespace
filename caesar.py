@@ -11,7 +11,7 @@ key = int(sys.argv[1])
 
 
 text = get_string("text: ")
-
+print("ciphertext: ", end="")
 
 for i in range(len(text)):
     if text[i].isalpha():
@@ -28,4 +28,4 @@ for i in range(len(text)):
             y = (x + key) % 26
             y = y + 97
     z = chr(y)
-    print(f"ciphertext: {z}", end="")
+    print(z, end="")
