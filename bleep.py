@@ -4,7 +4,7 @@ from cs50 import get_string
 
 def main():
 
- if len(sys.argv) != 2:
+ if len(sys.argv) < 2 or len(sys.argv) > 2:
   print("Usage: python bleep.py dictionary")
   False
 
