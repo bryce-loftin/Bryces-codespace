@@ -27,6 +27,5 @@ for i in range(len(text)):
             x = x - 97
             y = (x + key) % 26
             y = y + 97
-
     z = chr(y)
-    print(f"cyphertext {z}")
+    print(f"cyphertext: {z}", end="")
