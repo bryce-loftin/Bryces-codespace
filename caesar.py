@@ -22,7 +22,6 @@ for i in range(len(text)):
             y = (x + key) % 26
             y = y + 65
 
-
         if text[i].islower():
             x = x - 97
             y = (x + key) % 26
@@ -33,3 +32,7 @@ for i in range(len(text)):
         print(f"{text[i]}", end="")
 
 print("")
+
+# why so may comments
+# so manyyyyyyyyyy
+# whyyyyyy
