@@ -20,7 +20,7 @@ def main():
   if i in ban:
    for n in i:
     print("*", end="")
-   print("", end="")
+   print(" ", end= "")
   else:
    print(f"{i} ", end="")
 
