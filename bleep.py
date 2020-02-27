@@ -11,13 +11,18 @@ def main():
  infile = open(sys.argv[1], "r")
  bad = infile.read()
  ban = bad.split()
+ cuss = bad.upper()
 
  text = get_string("What message would you like to censor?\n")
  word = text.split()
 
 
  for i in word:
-  if i in ban:
+  if i.upper() in cuss:
+   for n in i:
+    print("*", end="")
+   print(" ", end= "")
+  elif i in ban:
    for n in i:
     print("*", end="")
    print(" ", end= "")
